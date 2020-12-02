@@ -1,3 +1,5 @@
+-- FIRST PUZZLE
+
 module Main where
 
 import Data.List
@@ -17,3 +19,12 @@ twoEntries = [(a, b) | a <- list, b <- absoluteDifferences, (a == b)]
 main :: IO ()
 main = do
   print twoEntries
+
+-- I posted this on twitter and have been given a good advice: [(a,b) | a <- list, b <- list, a + b == 2020]
+
+-- SECOND PUZZLE
+
+-- With the good advice in mind, I decided to use it for the second puzzle.
+-- Start GHCi, the load up twoEntries.hs; and to solve the second puzzle, I did this:
+
+threeEntries = [(a,b,c) | a <- list, b <- list, c <- list, (a + b) + c == 2020]
